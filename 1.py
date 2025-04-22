@@ -13,7 +13,7 @@ isQueued: 0"
 rosservice call /DobotServer/GetPose
 
 #归零
-rosservice call /DobotServer/SetHOMECmd
+rosservice call /DobotServer/SetHOMECmd “{}”
 
 #列出当前可使用的串口
 ls /dev/tty*
