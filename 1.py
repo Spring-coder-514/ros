@@ -1,6 +1,6 @@
 #常用指令
 #归位
-rosservice call /DobotServer/SetPTPCmd "{ptpMode: 0, x: 230, y: -25, z: 15, r: -96}"
+rosservice call /DobotServer/SetPTPCmd "{ptpMode: 0, x: 230, y: 37, z: 9, r: -96}"
 #X:215, Y:0, Z::25, R:0 ，这个是能转到车头的坐标
 
 
