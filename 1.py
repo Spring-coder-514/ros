@@ -17,5 +17,8 @@ rosservice call /DobotServer/SetHOMECmd
 
 #列出当前可使用的串口
 ls /dev/tty*
-
+#调用机械臂时，串口无效
+vim /home/eaibot/moveit_ws/src/dobot/launch/DobotServer.launch
+#找到 <param name="DobotServer/dobot_serial" value="/dev/ttyUSB2" /> 这一行，将 value 属性的值修改为正确的端口名
+<param name="DobotServer/dobot_serial" value="/dev/ttyUSB0" />#将ttyUSB0更改为自己的实际串口
 
