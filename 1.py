@@ -1,7 +1,7 @@
 #常用指令
 #归位
 rosservice call /DobotServer/SetPTPCmd "{ptpMode: 0, x: 230, y: 37, z: 9, r: -96}"
-#X:215, Y:0, Z::25, R:0 ，这个是能转到车头的坐标
+#X:215, Y:0, Z::25, R:0 ，这个是能转到车头的坐标，r代表的是舵机转的角度
 
 
 #气泵吸取suck：1吸取，0释放
