@@ -1,0 +1,41 @@
+eaibot@EAI_LEO:~$ cat 常用命令 
+rosservice call /DobotServer/SetPTPCmd "{ptpMode: 0, x: 17.5184, y: -315.6708, z: 26.9542, r: -89.1265}"
+机械臂位置（下降
+rosservice call /DobotServer/SetPTPCmd "{ptpMode: 0, x: 5.4567,y:   -297.3522,z:26.9542,r:-89.1265}"
+机械臂位置（上升
+rosservice call /DobotServer/SetPTPCmd "{ptpMode: 0, x: 7.3868, y: 163.0365, z: -27.1406, r: 87.2880}"
+机械臂位置（控制台
+rostopic pub /check std_msgs/String "data:'angule true -90 1 1'"
+微调机器人位置
+rosservice call /DobotServer/SetEndEffectorSuctionCup
+机械臂吸取与释放
+
+
+
+归位
+ rosservice call /DobotServer/SetPTPCmd "{ptpMode: 0, x: 230, y: 40, z: 15.9542, r: -89.1265}"
+
+抓
+rosservice call /DobotServer/SetPTPCmd "{ptpMode: 0, x: 269.411987305, y: 0, z: -8.3, r: -4}"
+
+吸取
+rosservice call /DobotServer/SetEndEffectorSuctionCup "enableCtrl: 1
+suck: 1
+isQueued: false"
+
+放
+rosservice call /DobotServer/SetEndEffectorSuctionCup "enableCtrl: 1
+suck: 0
+isQueued: false"
+
+rosservice call /DobotServer/ClearAllAlarmsState 
+
+
+roslaunch dobot DobotServer.launch
+
+source devel/setup.sh
+
+cd moveit_ws
+
+
+rosservice call /DobotServer/SetHOMECmd 
