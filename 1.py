@@ -1,8 +1,12 @@
 #常用指令
 #归位
 rosservice call /DobotServer/SetPTPCmd "{ptpMode: 0, x: 230, y: 37, z: 9, r: -96}"
-#X:215, Y:0, Z::25, R:0 ，这个是能转到车头的坐标，r代表的是舵机转的角度
-
+#X:215, Y:0, Z::25, R:0 ，这个是能转到车头的坐标，r代表的是负责气泵舵机转转的角度
+#目前：x最大：300，前后伸
+#z：最小：-60，最大：90高度
+#y：最小0，左右
+#最终
+rosservice call /DobotServer/SetPTPCmd "{ptpMode: 0, x: 230, y: 0, z: -60, r: -96}"
 
 #气泵吸取suck：1吸取，0释放
 rosservice call /DobotServer/SetEndEffectorSuctionCup "enableCtrl: 1
